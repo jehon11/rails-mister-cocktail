@@ -7,6 +7,7 @@
   <%= csp_meta_tag %>
 
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -14,6 +15,37 @@
   </head>
 
 <body>
+  <div class="navbar-wagon">
+    <!-- Logo -->
+    <div class="navbar-left">
+      <div>
+        <%= image_tag("martini.png", class: 'navbar-logo')%>
+      </div>
+      <div>
+        The Martini
+      </div>
+    </div>
+    <div>
+    </div>
+    <!-- Right Navigation -->
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
+      <div class="navbar-wagon-item navbar-wagon-link">
+        <%= link_to 'Home', cocktails_path%>
+      </div>
+      <div class="navbar-wagon-item navbar-wagon-link">
+        <%= link_to 'Add New', new_cocktail_path%>
+      </div><!-- Profile picture with dropdown list -->
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <img src="https://kitt.lewagon.com/placeholder/users/jehon11" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li><a href="https://kitt.lewagon.com/alumni/jehon11">Jeremy's Profile</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Dropdown appearing on mobile only -->
+  </div>
   <%= yield %>
   <%= javascript_include_tag "application" %>
   <!-- from app/assets/javascripts/application.js -->
