@@ -19,7 +19,7 @@
     <!-- Logo -->
     <div class="navbar-left">
       <div>
-        <%= image_tag("martini.png", class: 'navbar-logo')%>
+        <%= link_to image_tag("martini.png", class: 'navbar-logo'), cocktails_path %>
       </div>
       <div>
         The Martini
@@ -45,6 +45,20 @@
       </div>
     </div>
     <!-- Dropdown appearing on mobile only -->
+    <div class="navbar-wagon-item hidden-md hidden-lg">
+      <div class="dropdown">
+        <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li>
+            <%= link_to 'Home', cocktails_path%>
+          </li>
+          <li>
+            <%= link_to 'Add New', new_cocktail_path%>
+          </li>
+          <li><a href="https://kitt.lewagon.com/alumni/jehon11">Jeremy's Profile</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
   <%= yield %>
   <%= javascript_include_tag "application" %>

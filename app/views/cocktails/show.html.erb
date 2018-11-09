@@ -2,6 +2,7 @@
 <p>Find me in app/views/cocktails/show.html.erb</p>
 <%= @cocktail.name %>
 <%= link_to "back", cocktails_path %>
+<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
 <% @cocktail.doses.each do |dose| %>
 <ul class="list-inline">
   <li>
