@@ -5,11 +5,17 @@
 </div>
 </div>
 <div class="container">
-  <%= link_to "add a cocktail", new_cocktail_path %>
-  <% @cocktails.each do |cocktail| %>
-  <div>
-    <%= link_to cocktail.name, cocktail_path(cocktail) %>
-    <%= cl_image_tag(cocktail.photo, width: 150, height: 150, crop: :thumb) %>
+  <%=link_to "add a cocktail" , new_cocktail_path %>
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+    <div class="col-xs-12 col-sm-4">
+      <!-- insert <div class="card"> -->
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cocktail.photo %>);">
+        <div class="card-description">
+          <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+        </div>
+      </div>
+    </div>
+    <% end %>
   </div>
-  <% end %>
 </div>
