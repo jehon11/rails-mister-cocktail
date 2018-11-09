@@ -12,8 +12,3 @@ from_web = JSON.parse(open(url).read)
 from_web['drinks'].each do |ingredient|
   Ingredient.create(name: ingredient['strIngredient1'])
 end
-
-Cocktail.create(name: 'Old Fashioned')
-Cocktail.create(name: 'Mojito')
-Cocktail.create(name: 'Gin and Tonic')
-Cocktail.create(name: 'Whisky Sour')
