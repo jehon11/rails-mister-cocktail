@@ -9,7 +9,11 @@
       </h1>
     </div>
     <div class="cocktail-container">
+      <% if @cocktail.photo.to_s == "" %>
+      <%= cl_image_tag("jlzcficbmxgcwcbizawa", height: 400, width: 350, crop: :fill) %>
+      <% else %>
       <%= cl_image_tag @cocktail.photo, height: 400, width: 350, crop: :fill %>
+      <% end %>
       <div class="cocktail-info">
         <div class="recipe">
           <h3>
@@ -37,5 +41,28 @@
         </div>
       </div>
     </div>
+    <div class="reviews">
+      <h3>
+        Reviews
+      </h3>
+      <ul>
+        <% @cocktail.reviews.each do |review| %>
+        <li>
+          <%= review.rating %> |
+          <%= review.comment%>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="add-review-form">
+      <%= simple_form_for [@cocktail, @review] do |f| %>
+      <%= f.input :comment, placeholder: 'Awesome cocktail!' %>
+      <%= f.input :rating, collection: [1,2,3,4,5] %>
+      <%= button_tag( class: "button") do %>
+      <i class="fas fa-plus-circle"></i> Add a Review
+      <% end %>
+      <% end %>
+    </div>
   </div>
-  <%= link_to "delete cocktail", cocktail_path(@cocktail), method: :delete, data: {confirm: "Are you sure you want to delete this cocktail?"} %>
+</div>
+<%= link_to "delete cocktail", cocktail_path(@cocktail), method: :delete, data: {confirm: "Are you sure you want to delete this cocktail?"} %>

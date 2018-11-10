@@ -1,6 +1,12 @@
-<%= simple_form_for @cocktail do |f| %>
-<%= f.input :name %>
-<%= f.input :photo %>
-<%= f.input :photo_cache, as: :hidden %>
-<%= f.button :submit %>
-<% end %>
+<div class="container">
+  <div class="form">
+    <%= simple_form_for @cocktail do |f| %>
+    <%= f.input :name, required: false%>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= button_tag( :class => "button") do %>
+    <i class="fas fa-plus-circle"></i> Add Cocktail
+    <% end %>
+    <% end %>
+  </div>
+</div>
