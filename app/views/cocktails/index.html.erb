@@ -1,21 +1,36 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 50%), url(<%= asset_path 'bar.jpg' %>);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url(<%= asset_path 'bar.jpg' %>);">
   <div class="banner-content">
     <h1>The Martini</h1>
   </div>
 </div>
 </div>
-<div class="container">
-  <%=link_to "add a cocktail" , new_cocktail_path %>
-  <div class="row">
-    <% @cocktails.each do |cocktail| %>
-    <div class="col-xs-12 col-sm-4">
-      <!-- insert <div class="card"> -->
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cocktail.photo %>);">
-        <div class="card-description">
-          <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+<h1 class="text-center">Signature Cocktails</h1>
+<div class="cards-container">
+  <div class="container">
+    <div class="row">
+      <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-6">
+        <!-- insert <div class="card"> -->
+        <div class="card">
+          <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cocktail.photo %>);">
+          </div>
+          <div class="card-content">
+            <h2 class="card-content-header">
+            <%= link_to cocktail.name, cocktail_path(cocktail) %>
+            </h2>
+            <p class="card-content-ingredients">
+              <% cocktail.ingredients.each_with_index do |ingredient, index| %>
+              <% if index == cocktail.ingredients.length - 1 %>
+              <%= ingredient.name  %>
+              <% else %>
+              <%= ingredient.name + "," %>
+              <% end %>
+              <% end %>
+            </p>
+          </div>
         </div>
       </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
 </div>

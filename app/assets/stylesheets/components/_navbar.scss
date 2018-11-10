@@ -12,12 +12,13 @@
   font-size: 30px;
 }
 
-a {
+.navbar-wagon a {
   text-decoration: none;
   color: black !important;
+  font-size: 20px;
 }
 
-a:hover {
+.navbar-wagon a:hover {
   text-decoration: none;
 }
 
@@ -56,15 +57,6 @@ a:hover {
 }
 
 /* Navbar link */
-.navbar-wagon-link {
-  color: #616668;
-  font-size: 20px;
-}
-
-.navbar-wagon-link:hover {
-  color: #da552f;
-  text-decoration: none;
-}
 
 /* Dropdown menu */
 .navbar-wagon-dropdown-menu {
