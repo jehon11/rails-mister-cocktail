@@ -11,6 +11,7 @@ gem 'simple_form'
 gem 'carrierwave', '~> 1.2'
 
 gem 'cloudinary'
+gem 'rest-client', '~> 2.0', '>= 2.0.2'
 
 gem 'dotenv-rails', groups: [:development, :test]
 
