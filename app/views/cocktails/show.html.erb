@@ -12,7 +12,7 @@
     <div class="cocktail-container">
       <div class="cocktail-picture">
         <% if @cocktail.photo.to_s == "" %>
-        <%= cl_image_tag("jlzcficbmxgcwcbizawa", height: 400, width: 350, crop: :fill) %>
+        <%= cl_image_tag("fhj3o5ffjyhaexzdxuqa", height: 400, width: 350, crop: :fill) %>
         <% else %>
         <%= cl_image_tag @cocktail.photo, height: 400, width: 350, crop: :fill %>
         <% end %>
@@ -58,21 +58,23 @@
         (
         <%= @cocktail.reviews.length  %> reviews)
       </h3>
-      <div class="row">
-        <% @cocktail.reviews.each do |review| %>
-        <div class="col-xs-12 col-sm-6">
-          <div class="card-review">
-            <div class="stars">
-              <% review.rating.times do %>
-              <i class="fas fa-star"></i>
-              <% end %>
-            </div>
-            <div class="comment">
-              <%= review.comment %>
+      <div class="cards-container">
+        <div class="row">
+          <% @cocktail.reviews.each do |review| %>
+          <div class="col-xs-12 col-sm-6">
+            <div class="card-review">
+              <div class="stars">
+                <% review.rating.times do %>
+                <i class="fas fa-star"></i>
+                <% end %>
+              </div>
+              <div class="comment">
+                <%= review.comment %>
+              </div>
             </div>
           </div>
+          <% end %>
         </div>
-        <% end %>
       </div>
     </div>
     <hr>

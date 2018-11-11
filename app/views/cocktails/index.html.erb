@@ -12,7 +12,7 @@
       <div class="col-xs-12 col-sm-6">
         <!-- insert <div class="card"> -->
         <div class="card">
-          <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cocktail.photo %>);">
+          <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cocktail.photo.to_s == '' ? 'http://res.cloudinary.com/dzk8zzmdo/image/upload/v1541831609/fhj3o5ffjyhaexzdxuqa.jpg' : cocktail.photo %>);">
           </div>
           <div class="card-content">
             <div class="card-content-top">
