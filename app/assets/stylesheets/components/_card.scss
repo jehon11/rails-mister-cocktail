@@ -19,6 +19,13 @@
   width: 100px;
   flex-grow: 1;
   padding: 0px 0px 0px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .card-content-bottom {
+    font-size: 15px;
+  }
 }
 
 .card-content-header {
@@ -31,4 +38,22 @@
   margin-top: 10px;
   color: white;
   font-size: 15px;
+}
+
+.more-details {
+  margin-top: 10px;
+  color: white;
+  font-size: 15px;
+}
+
+.card-review {
+  color: white;
+  margin: 20px 10px;
+  display: flex;
+  font-style: italic;
+
+  .stars {
+    flex: 0 0 120px;
+    margin-right: 20px;
+  }
 }

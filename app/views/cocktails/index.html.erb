@@ -15,18 +15,36 @@
           <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cocktail.photo %>);">
           </div>
           <div class="card-content">
-            <h2 class="card-content-header">
-            <%= link_to cocktail.name, cocktail_path(cocktail) %>
-            </h2>
-            <p class="card-content-ingredients">
-              <% cocktail.ingredients.each_with_index do |ingredient, index| %>
-              <% if index == cocktail.ingredients.length - 1 %>
-              <%= ingredient.name  %>
-              <% else %>
-              <%= ingredient.name + "," %>
+            <div class="card-content-top">
+              <h2 class="card-content-header">
+                <%= link_to cocktail.name, cocktail_path(cocktail) %>
+              </h2>
+              <p class="card-content-ingredients">
+                <% cocktail.ingredients.each_with_index do |ingredient, index| %>
+                <% if index == cocktail.ingredients.length - 1 %>
+                <%= ingredient.name  %>
+                <% else %>
+                <%= ingredient.name + "," %>
+                <% end %>
+                <% end %>
+              </p>
+              <div class="more-details">
+                <%= link_to cocktail_path(cocktail) do %>
+                <i class="fas fa-info-circle"></i> more details
+                <% end %>
+              </div>
+            </div>
+            <div class="card-content-bottom">
+              <% cocktail.stars.times do %>
+              <i class="fas fa-star"></i>
               <% end %>
+              <% if cocktail.half_star == true %>
+              <i class="fas fa-star-half"></i>
               <% end %>
-            </p>
+              <%= cocktail.average_rating  %>
+              (
+              <%= cocktail.reviews.length  %> reviews)
+            </div>
           </div>
         </div>
       </div>
