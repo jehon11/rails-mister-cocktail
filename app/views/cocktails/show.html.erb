@@ -70,6 +70,7 @@
               </div>
               <div class="comment">
                 <%= review.comment %>
+                <%= review.from %>
               </div>
             </div>
           </div>
@@ -82,6 +83,7 @@
       <%= simple_form_for [@cocktail, @review] do |f| %>
       <%= f.input :comment, placeholder: 'Awesome cocktail!' %>
       <%= f.input :rating, collection: [1,2,3,4,5], required: false %>
+      <%= f.input :from, placeholder: 'John Smith' %>
       <%= button_tag( class: "button") do %>
       <i class="fas fa-plus-circle"></i> Add a Review
       <% end %>
